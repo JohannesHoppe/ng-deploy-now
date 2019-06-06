@@ -1,0 +1,10 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "deploy": {
+      "implementation": "./dist/src/builders/deploy.builder",
+      "schema": "./src/builders/schema.json",
+      "description": "Deploy to Now"
+    }
+  }
+}

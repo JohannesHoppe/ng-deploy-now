@@ -1,0 +1,6 @@
+{
+  "id": "NowDeploySchema",
+  "title": "Now Deploy",
+  "description": "Deploy the app to Now",
+  "properties": {}
+}
