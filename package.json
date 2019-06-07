@@ -1,6 +1,6 @@
 {
   "name": "@zeit/ng-deploy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Deploy Angular projects to Now",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
