@@ -13,7 +13,7 @@ interface Build {
 interface Route {
 	src: string;
 	dest: string;
-	headers: any;
+	headers?: any;
 }
 
 interface NowJson {
@@ -34,7 +34,7 @@ export function generateNowJson(tree: Tree, options: ProjectOption) {
 	if (tree.exists(ignorePath)) {
 		throw new SchematicsException(`There is already .nowignore file.`);
 	} else {
-		createIgnoreFile(tree, ignorePath, options.outputPath);
+		createIgnoreFile(tree, ignorePath);
 	}
 
 	if (nowJson.builds.length > 0 || nowJson.routes.length > 0) {
@@ -49,7 +49,6 @@ export function generateNowJson(tree: Tree, options: ProjectOption) {
 	nowJson.routes.push(
 		{
 			src: "/(.*)",
-			headers: { "cache-control": "max-age=31536000,immutable" },
 			dest: `${options.outputPath}/$1`
 		},
 		{
@@ -93,6 +92,6 @@ function saveJson(path: string, tree: Tree, json: string) {
 	}
 }
 
-function createIgnoreFile(tree: Tree, path: string, outputPath: string) {
-	tree.create(path, `!${outputPath}\n`);
+function createIgnoreFile(tree: Tree, path: string) {
+	tree.create(path, ``);
 }

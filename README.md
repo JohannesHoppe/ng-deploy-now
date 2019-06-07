@@ -1,8 +1,41 @@
 # ng-deploy
 
-Deploy Angular projects to Now
+Deploy Angular projects to [Now](https://zeit.co/now)
 
-## Developmnet
+## Quick start
+
+1. Install the latest version of Angular cli
+
+    ```sh
+    yarn global add @angular/cli
+    ```
+
+1. Create a new Angular project
+
+    ```sh
+    ng new hello-world --defaults
+    cd hello-world
+    ```
+
+1. Add `ng-deploy` to your project
+    ```sh
+    ng add @zeit/ng-deploy
+    ```
+
+1. You will be prompt to log in to [Now](https://zeit.co/now) account
+
+1. Deploy your project to `Now`
+
+    ```sh
+    ng run hello-world:deploy
+    ```
+
+After deploying your application you will see output similar to the following:
+```
+Your application is deployed at https://hello-world-1234.now.sh
+```
+
+## Development
 
 If you want to try the latest package locally without installing it from npm, use the following instructions. This may be useful when you want to try the latest non published version of this library or you want to make a contribution.
 
