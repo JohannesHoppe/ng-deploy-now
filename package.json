@@ -7,7 +7,7 @@
   "files": [
     "./dist/src/**"
   ],
-  "repository": "zeit/ng-deploy",
+  "repository": "zeit/ng-deploy-now",
   "license": "MIT",
   "builders": "./builders.json",
   "schematics": "./collection.json",
