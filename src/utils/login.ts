@@ -2,22 +2,23 @@ import fetch from 'node-fetch'
 import { hostname } from 'os'
 import emailPrompt from 'email-prompt'
 import ms from 'ms'
-import { sleep } from './output'
+import { sleep, wait, hightlight } from './output'
 import { stringify } from 'querystring'
 import { SchematicsException } from '@angular-devkit/schematics'
-import chalk from 'chalk'
 
 const API_ENDPOINT = 'https://api.zeit.co'
 
 export async function login() {
 	let email
+	let spinner
 	try {
 		email = await emailPrompt({ start: 'Enter your email: ' })
 	} catch (e) {
 		if (e.message === 'User abort') {
-			throw new SchematicsException('User aborted email prompt!')
+			throw new SchematicsException('\nUser aborted email prompt!')
 		}
 	}
+	spinner = wait(`Sending you an email`)
 
 	let securityCode
 	let vertificationToken
@@ -26,21 +27,22 @@ export async function login() {
 		const data = await registration(email)
 		securityCode = data.securityCode
 		vertificationToken = data.token
+		spinner.stop()
 	} catch (e) {
 		throw new SchematicsException(
 			`There was error with token request: ${e.message}`,
 		)
 	}
 	// Empty line
-	console.log()
 
 	console.log(
-		`We sent an email to ${chalk.bold(
+		`We sent an email to ${hightlight(
 			email,
-		)}.\nPlease follow the steps provided, inside it and make sure the security code matches ${chalk.bold(
+		)}. Please follow the steps provided\ninside it and make sure the security code matches ${hightlight(
 			securityCode,
 		)}.`,
 	)
+	spinner = wait('Waiting for your confirmation')
 
 	let token = null
 
@@ -52,6 +54,8 @@ export async function login() {
 			console.log(e)
 		}
 	}
+
+	spinner.stop()
 
 	return { token }
 }

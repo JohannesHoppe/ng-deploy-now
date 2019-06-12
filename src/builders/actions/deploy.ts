@@ -2,9 +2,11 @@ import { BuilderContext } from '@angular-devkit/architect'
 import createDeployment from 'now-client'
 import { SchematicsException } from '@angular-devkit/schematics'
 import chalk from 'chalk';
+import { wait } from '../../utils/output';
+
 
 export async function deploy(context: BuilderContext, token: string) {
-	context.logger.info(`📦 building your application`)
+	context.logger.info(`Building your application 📦 `)
 
 	// Build production code
 	const build = await context.scheduleTarget({
@@ -14,13 +16,17 @@ export async function deploy(context: BuilderContext, token: string) {
 	})
 
 	await build.result
+	
+	// Empty line
+	console.log()
 
-	context.logger.info(`🚀 deploying your application`)
+	const spinner = wait('deploying your application 🚀')	
 
 	for await (const event of createDeployment(context.workspaceRoot, {
 		token,
 	})) {
 		if (event.type === 'ready' || event.type === 'created') {
+			spinner.stop()
 			const { url } = event.payload
 			context.logger.info(
 				`Your application is deployed at: ${chalk.bold(`https://${url}`)}`,

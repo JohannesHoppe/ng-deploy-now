@@ -14,6 +14,8 @@ const globalConfig = new Conf<Authorization | null>({
 	configName: "ng-now"
 });
 
+globalConfig.clear()
+
 export async function loginToNow() {
 	let authorization = (await globalConfig.get(
 		AUTHORIZATION
