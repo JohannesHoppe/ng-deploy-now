@@ -1,9 +1,7 @@
 {
   "name": "@zeit/ng-deploy",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Deploy Angular projects to Now",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
   "repository": "zeit/ng-deploy-now",
   "license": "MIT",
   "builders": "./builders.json",
