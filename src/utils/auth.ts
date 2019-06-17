@@ -1,30 +1,30 @@
-import Conf from "conf";
 import { login } from "./login";
+import { readAuthConfigFile, writeToAuthConfigFile } from "./filte";
+import { SchematicsException } from "@angular-devkit/schematics";
 
-type Authorization = {
+export type AuthConfig = {
 	token: string;
+	_: string;
 };
 
-const AUTHORIZATION = "authorization";
-
-const globalConfig = new Conf<Authorization | null>({
-	defaults: {
-		token: null
-	},
-	configName: "ng-now"
-});
-
-globalConfig.clear()
-
 export async function loginToNow() {
-	let authorization = (await globalConfig.get(
-		AUTHORIZATION
-	)) as Authorization | null;
-
-	if (!authorization) {
-		authorization = await login();
-		globalConfig.set(AUTHORIZATION, authorization);
+	let token;
+	try {
+		token = readAuthConfigFile().token;
+	} catch (e) {
+		if (e.code === "ENOENT") {
+			const { token } = await login();
+			const config: AuthConfig = { ...defaultConfig, token };
+			writeToAuthConfigFile(config);
+		} else {
+			throw new SchematicsException(e);
+		}
 	}
 
-	return authorization;
+	return token;
 }
+
+const defaultConfig = {
+	_:
+		"This is your Now credentials file. DON'T SHARE! More: https://bit.ly/2qAK8bb"
+};

@@ -6,18 +6,25 @@ import {
 import { deploy } from "./actions/deploy";
 import { loginToNow } from "../utils/auth";
 
+export type DeployOptions = {
+	scope: string;
+};
+
 export default createBuilder(
-	async (_: any, context: BuilderContext): Promise<BuilderOutput> => {
+	async (
+		options: DeployOptions,
+		context: BuilderContext
+	): Promise<BuilderOutput> => {
 		if (!context.target) {
 			throw new Error(
 				"Not possible to deploy application without a target"
 			);
 		}
 
-		const { token } = await loginToNow();
+		const token = await loginToNow();
 
 		try {
-			await deploy(context, token);
+			await deploy(context, token!, options);
 		} catch (e) {
 			context.logger.error(`Error when trying to deploy:`);
 			console.log(e);

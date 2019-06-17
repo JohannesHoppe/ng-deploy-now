@@ -1,17 +1,16 @@
-import ora from 'ora'
-import chalk from 'chalk'
+import ora from "ora";
+import chalk from "chalk";
 
 export const sleep = (ms: number) => {
 	return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-
 export const wait = (text: string) => {
-	const spinner = ora({text: chalk.gray(`${text}\n`), color: 'gray'})
+	const spinner = ora({ text: chalk.gray(`${text}\n`), color: "gray" });
 
-	spinner.start()
+	spinner.start();
 
-	return spinner
-}
+	return spinner;
+};
 
-export const hightlight = (text: string) => chalk.bold.underline(text)
+export const highlight = (text: string) => chalk.bold.underline(text);

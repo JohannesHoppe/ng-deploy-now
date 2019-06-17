@@ -31,10 +31,11 @@
     "@angular-devkit/core": "8.0.0",
     "@angular-devkit/schematics": "8.0.0",
     "chalk": "2.4.2",
-    "conf": "4.1.0",
     "email-prompt": "0.3.2",
+    "load-json-file": "6.1.0",
     "ms": "2.1.1",
     "now-client": "4.2.0",
-    "ora": "3.4.0"
+    "ora": "3.4.0",
+    "write-json-file": "4.1.0"
   }
 }
