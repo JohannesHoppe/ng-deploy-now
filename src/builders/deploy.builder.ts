@@ -27,7 +27,6 @@ export default createBuilder(
 			await deploy(context, token!, options);
 		} catch (e) {
 			context.logger.error(`Error when trying to deploy:`);
-			console.log(e);
 			context.logger.error(e);
 			return { success: false };
 		}
