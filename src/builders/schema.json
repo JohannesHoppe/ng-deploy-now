@@ -2,5 +2,12 @@
   "id": "NowDeploySchema",
   "title": "Now Deploy",
   "description": "Deploy the app to Now",
-  "properties": {}
+  "properties": {
+    "scope": {
+      "type": "string",
+      "default": "",
+      "description": "This property determines the scope (user or team) under which the project will be deployed",
+      "alias": "S"
+    }
+  }
 }

@@ -3,6 +3,7 @@ import createDeployment from "now-client";
 import { SchematicsException } from "@angular-devkit/schematics";
 import { wait, highlight } from "../../utils/output";
 import { DeployOptions } from "../deploy.builder";
+import { getTeamIdFromSlug } from "../../utils/scope";
 
 export async function deploy(
 	context: BuilderContext,
@@ -21,12 +22,15 @@ export async function deploy(
 	await build.result;
 
 	// Empty line
+	console.log();
 
 	const spinner = wait("deploying your application 🚀");
 
+	const teamId = await getTeamIdFromSlug(_options.scope, token);
+
 	for await (const event of createDeployment(context.workspaceRoot, {
-		token
-		// teamId: options.scope !== '' ? options.scope : undefined
+		token,
+		teamId
 	})) {
 		if (event.type === "ready" || event.type === "created") {
 			spinner.stop();
