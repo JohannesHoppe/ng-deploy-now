@@ -16,6 +16,7 @@ export async function loginToNow() {
 			const { token } = await login();
 			const config: AuthConfig = { ...defaultConfig, token };
 			writeToAuthConfigFile(config);
+			return token;
 		} else {
 			throw new SchematicsException(e);
 		}

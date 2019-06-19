@@ -8,7 +8,7 @@ import { getTeamIdFromSlug } from "../../utils/scope";
 export async function deploy(
 	context: BuilderContext,
 	token: string,
-	_options: DeployOptions
+	options: DeployOptions
 ) {
 	context.logger.info(`Building your application 📦 `);
 
@@ -26,7 +26,7 @@ export async function deploy(
 
 	const spinner = wait("deploying your application 🚀");
 
-	const teamId = await getTeamIdFromSlug(_options.scope, token);
+	const teamId = await getTeamIdFromSlug(options.scope, token);
 
 	for await (const event of createDeployment(context.workspaceRoot, {
 		token,
