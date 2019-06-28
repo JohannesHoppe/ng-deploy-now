@@ -10,7 +10,7 @@ export async function deploy(
 	token: string,
 	options: DeployOptions
 ) {
-	context.logger.info(`Building your application 📦 `);
+	context.logger.info(`Building your application 📦`);
 
 	// Build production code
 	const build = await context.scheduleTarget({

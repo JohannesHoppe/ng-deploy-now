@@ -1,8 +1,12 @@
 {
   "name": "@zeit/ng-deploy",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "Deploy Angular projects to Now",
   "repository": "zeit/ng-deploy-now",
+  "author": {
+    "name": "Lukáš Huvar",
+    "email": "lukas@huvar.cz"
+  },
   "license": "MIT",
   "builders": "./builders.json",
   "schematics": "./collection.json",

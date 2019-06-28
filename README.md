@@ -1,6 +1,8 @@
-# ng-deploy
+![](https://assets.zeit.co/image/upload/v1561740077/repositories/ng-deploy-now/ng-deploy-now.png)
+[![NPM version](https://img.shields.io/npm/v/@zeit/ng-deploy.svg)](https://www.npmjs.com/package/@zeit/ng-deploy)
+[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/zeit/now)
 
-Deploy Angular projects to [Now](https://zeit.co/now)
+Deploy Angular applications to [Now](https://zeit.co/now)
 
 ## Quick start
 
@@ -18,6 +20,7 @@ Deploy Angular projects to [Now](https://zeit.co/now)
     ```
 
 1. Add `ng-deploy` to your project
+
     ```sh
     ng add @zeit/ng-deploy
     ```
@@ -31,8 +34,23 @@ Deploy Angular projects to [Now](https://zeit.co/now)
     ```
 
 After deploying your application you will see output similar to the following:
+
 ```
 Your application is deployed at https://hello-world-1234.now.sh
+```
+
+## Usage
+
+You can adjust your deployment with options.
+
+The available options are:
+
+-   `--scope` (`-s`) - determines under what [team or user](https://zeit.co/docs/v2/platform/users-and-teams/) application is going to be deployed
+
+Example:
+
+```sh
+ng run <project-name>:deploy --scope zeit
 ```
 
 ## Development
