@@ -8,30 +8,30 @@ Deploy Angular applications to [Now](https://zeit.co/now)
 
 1. Install the latest version of Angular cli
 
-    ```sh
-    yarn global add @angular/cli
-    ```
+   ```sh
+   yarn global add @angular/cli
+   ```
 
 1. Create a new Angular project
 
-    ```sh
-    ng new hello-world --defaults
-    cd hello-world
-    ```
+   ```sh
+   ng new hello-world --defaults
+   cd hello-world
+   ```
 
 1. Add `ng-deploy` to your project
 
-    ```sh
-    ng add @zeit/ng-deploy
-    ```
+   ```sh
+   ng add @zeit/ng-deploy
+   ```
 
 1. You will be prompt to log in to [Now](https://zeit.co/now) account
 
 1. Deploy your project to `Now`
 
-    ```sh
-    ng run hello-world:deploy
-    ```
+   ```sh
+   ng run hello-world:deploy
+   ```
 
 After deploying your application you will see output similar to the following:
 
@@ -45,12 +45,16 @@ You can adjust your deployment with options.
 
 The available options are:
 
--   `--scope` (`-s`) - determines under what [team or user](https://zeit.co/docs/v2/platform/users-and-teams/) application is going to be deployed
+- `--configuration` (`-c`) - A named build target, as specified in the "configurations" section of angular.json
+- `--scope` (`-s`) - Scope [user or team](https://zeit.co/docs/v2/platform/users-and-teams/) under which the project will be deployed
+- `--force` (`-f`) - Force a new deployment even if nothing has changed
+- `--target` (`-t`) - Deploy to either 'staging' or 'production' aliases
+- `--no-build` - Skip build process during deployment
 
 Example:
 
 ```sh
-ng run <project-name>:deploy --scope zeit
+ng deploy --scope zeit
 ```
 
 ## Development
@@ -63,28 +67,28 @@ Use the following instructions to make ng-deploy-now available locally via `yarn
 
 1. Clone the project
 
-    ```sh
-    git clone https://github.com/zeit/ng-deploy-now
-    cd ng-deploy-now
-    ```
+   ```sh
+   git clone https://github.com/zeit/ng-deploy-now
+   cd ng-deploy-now
+   ```
 
 1. Install the dependencies
 
-    ```sh
-    yarn install
-    ```
+   ```sh
+   yarn install
+   ```
 
 1. Build the project:
 
-    ```sh
-    yarn run build
-    ```
+   ```sh
+   yarn run build
+   ```
 
 1. Create a local yarn link:
 
-    ```sh
-    yarn link
-    ```
+   ```sh
+   yarn link
+   ```
 
 ### Adding to an Angular project - ng add
 
@@ -92,28 +96,28 @@ Once you have completed the previous steps to yarn link the local copy of ng-dep
 
 1. Enter the project's directory
 
-    ```sh
-    cd your-angular-project
-    ```
+   ```sh
+   cd your-angular-project
+   ```
 
 1. To add the local version of @zeit/ng-deploy, link @zeit/ng-deploy.
 
-    ```sh
-    yarn link @zeit/ng-deploy
-    ```
+   ```sh
+   yarn link @zeit/ng-deploy
+   ```
 
 1. You may be prompted you to sign in to Now.
 
 1. Then, instead of running `ng add @zeit/ng-deploy`, add the local version.
 
-    ```sh
-    ng add @zeit/ng-deploy
-    ```
+   ```sh
+   ng add @zeit/ng-deploy
+   ```
 
 1. Now you can deploy your angular app to Now.
 
-    ```sh
-    ng run your-angular-project:deploy
-    ```
+   ```sh
+   ng run your-angular-project:deploy
+   ```
 
 > You can remove the link later by running `yarn unlink`
