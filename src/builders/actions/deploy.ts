@@ -13,7 +13,7 @@ export async function deploy(
   context.logger.info(`Building your application 📦`);
 
   // Build production code
-  if (options["no-build"]) {
+  if (!options["no-build"]) {
     const build = await context.scheduleTarget({
       target: "build",
       project: context!.target!.project,
