@@ -3,11 +3,34 @@
   "title": "Now Deploy",
   "description": "Deploy the app to Now",
   "properties": {
+    "configuration": {
+      "type": "string",
+      "default": "production",
+      "description": "A named build target, as specified in the \"configurations\" section of angular.json",
+      "alias": "c"
+    },
     "scope": {
       "type": "string",
       "default": "",
-      "description": "This property determines the scope (user or team) under which the project will be deployed",
+      "description": "Scope (user or team) under which the project will be deployed",
       "alias": "S"
+    },
+    "no-build": {
+      "type": "boolean",
+      "default": false,
+      "description": "Skip build process during deployment"
+    },
+    "force": {
+      "type": "boolean",
+      "default": false,
+      "description": "Force a new deployment even if nothing has changed",
+      "alias": "f"
+    },
+    "target": {
+      "type": "string",
+      "default": "production",
+      "description": "Deploy to either 'staging' or 'production' aliases",
+      "alias": "t"
     }
   }
 }

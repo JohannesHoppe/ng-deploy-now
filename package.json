@@ -25,9 +25,9 @@
     "@types/ms": "0.7.30",
     "@types/node": "12.7.2",
     "@types/node-fetch": "2.3.4",
-    "husky": "2.3.0",
+    "husky": "^3.0.4",
     "prettier": "1.17.1",
-    "pretty-quick": "1.11.0",
+    "pretty-quick": "^1.11.1",
     "typescript": "3.4.5"
   },
   "dependencies": {
