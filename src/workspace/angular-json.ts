@@ -102,10 +102,7 @@ export class AngularJson {
 			);
 		}
 		this.project.architect["deploy"] = {
-			builder: "@zeit/ng-deploy:deploy",
-			options: {
-				config: "now.json"
-			}
+			builder: "@zeit/ng-deploy:deploy"
 		};
 
 		this.saveJson();

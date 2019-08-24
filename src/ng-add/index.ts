@@ -4,7 +4,6 @@ import {
 	Rule,
 	SchematicContext
 } from "@angular-devkit/schematics";
-import { generateNowJson } from "../workspace/now-json";
 import { AngularJson } from "../workspace/angular-json";
 import { loginToNow } from "../utils/auth";
 
@@ -19,10 +18,6 @@ function addDeployToNow() {
 		const angularJson = new AngularJson(tree);
 
 		angularJson.addDeployArchitect();
-
-		const { projectName, outputPath } = angularJson.getMeta();
-
-		generateNowJson(tree, { name: projectName, outputPath });
 
 		await loginToNow();
 	};
