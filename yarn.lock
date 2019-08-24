@@ -61,10 +61,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
-"@types/node@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
-  integrity sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==
+"@types/node@12.7.2":
+  version "12.7.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.2.tgz#c4e63af5e8823ce9cc3f0b34f7b998c2171f0c44"
+  integrity sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -771,10 +771,10 @@ now-client@4.1.2:
     querystring "^0.2.0"
     recursive-readdir "2.2.2"
 
-now-client@4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/now-client/-/now-client-4.3.1.tgz#d0e46211b5fefc1f8e65fc7c85eb721410802820"
-  integrity sha512-QFlcMV11h327Xw/qLUd1sX/X/RY2CB4l/lZYncNvzBSgzDGJuDZx1YBTmnZxeELRRMXENOgLRw4m/O8lLf69mQ==
+now-client@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/now-client/-/now-client-5.1.0.tgz#7b5e8f5150cf11bdeb27505acd5c8748ede1d486"
+  integrity sha512-m4670Z8jeB0+0YhhJNLSvoX8F7mVvFq67NddrCGCqOLw2R/lP11A0qJYi7/qclJ4ZXq8V9Vf6mXKcxlSDPLj5w==
   dependencies:
     "@zeit/fetch" "5.1.0"
     async-retry "1.2.3"

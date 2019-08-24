@@ -1,5 +1,5 @@
 import { BuilderContext } from "@angular-devkit/architect";
-import createDeployment from "now-client";
+import { createDeployment } from "now-client";
 import { SchematicsException } from "@angular-devkit/schematics";
 import { wait, highlight } from "../../utils/output";
 import { DeployOptions } from "../deploy.builder";

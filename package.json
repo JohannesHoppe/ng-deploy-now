@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/ms": "0.7.30",
-    "@types/node": "12.0.2",
+    "@types/node": "12.7.2",
     "@types/node-fetch": "2.3.4",
     "husky": "2.3.0",
     "prettier": "1.17.1",
@@ -39,7 +39,7 @@
     "load-json-file": "6.1.0",
     "ms": "2.1.1",
     "node-fetch": "2.6.0",
-    "now-client": "4.3.1",
+    "now-client": "5.1.0",
     "ora": "3.4.0",
     "write-json-file": "4.1.0"
   }
